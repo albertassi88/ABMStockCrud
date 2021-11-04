@@ -6,5 +6,6 @@ export const Div = styled.div`
   height: 100vh; 
   border: 1px solid #d1d1e9;
   background-color: #e3f6f5;
+
 `;
 
