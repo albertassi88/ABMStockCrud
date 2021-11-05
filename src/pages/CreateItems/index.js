@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ApiCrudCrud from "../../services/ApiCrudCrud";
 import HeaderABM from "../../components/HeaderABM/index";
-import { Div, Input, Button } from "../../pages/ListItems/style";
+import { Div, Input, Button } from "./style";
 
-export default function ListItems() {
+export default function CreateItems() {
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
     const [product, setProduct] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./pages/Home/index";
-import ListItems from "./pages/ListItems/index";
+import CreateItems from "./pages/CreateItems/index";
 import { GlobalStyle } from "./style";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/items" element={<ListItems />} />
+            <Route path="/items" element={<CreateItems />} />
         </Routes>    
       </BrowserRouter>
     </>
