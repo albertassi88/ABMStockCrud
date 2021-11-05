@@ -14,3 +14,8 @@ export const Img = styled.img`
   height: 100px; 
   opacity: 0.8;
 `;
+
+export const Button = styled.button`
+  width: 100px;
+  height: 100px;  
+`;

@@ -1,15 +1,15 @@
 export default async function CrudCrud(quantityItem, priceItem, productItem, clientName, activeItem) {
-  return fetch("https://crudcrud.com/api/289c303b2fca4914ad55075ea70e125f/item", { 
+  return fetch("https://crudcrud.com/api/865b385775f745a488567153703d0cc8/item", { 
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'POST',
         body: JSON.stringify({ 
             quantity: `${quantityItem}`, 
             price: `${priceItem}`,
             product: {
-              name: `${productItem}`  
+              productName: `${productItem}`  
             },
             client: {
-              name: `${clientName}`
+              clientName: `${clientName}`
             },
             active: `${activeItem}` 
         }) 
