@@ -16,13 +16,24 @@ export const Button = styled.button`
   margin-left: 100px;
   margin-right: 100px;
   border: none;
-  background-color: #272343;
+  background-color: #0b5ba7;
   color: white;
   font-size: 34px;
+  font-weight: bold;
   border-radius: 5px;
+  :hover {
+		background-color: #216aad;
+		cursor: pointer;
+	}
   
   ${props => props.second && css`
-    background-color: #2d334a;
+    background-color: white;
+    color: #0b5ba7;
+    border: 4px solid #0b5ba7;
+    :hover {
+      background-color: #dde6ee;
+      cursor: pointer;
+    }    
   `}
 `;
 

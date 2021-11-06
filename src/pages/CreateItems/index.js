@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as api from "../../services/ApiCrudCrud";
 import HeaderABM from "../../components/HeaderABM/index";
+import { useNavigate } from "react-router-dom";
 import { Div, Input, Button } from "./style";
 
 export default function CreateItems() {
@@ -9,6 +10,12 @@ export default function CreateItems() {
     const [product, setProduct] = useState("");
     const [client, setClient] = useState("");
     const [active, setActive] = useState(""); 
+
+    let navigate = useNavigate();
+
+    function handleHome() {
+        navigate("/");
+    }
 
     function handleAddItems() {
         if (quantity === "" || price === "" || product === "" || client === "" || active === "") {
@@ -29,34 +36,34 @@ export default function CreateItems() {
 
     return (
         <Div>
-            <HeaderABM />
+            <HeaderABM />           
             <Div second>
                 <Input 
-                    placeholder="Quantidade" 
+                    placeholder="Digite a quantidade" 
                     value={quantity} 
                     type="number"
                     onChange={({target}) => setQuantity(target.value)}
                 />
                 <Input 
-                    placeholder="Preço" 
+                    placeholder="Digite o preço" 
                     value={price} 
                     type="number"
                     onChange={({target}) => setPrice(target.value)}
                 />
                 <Input 
-                    placeholder="Nome do produto" 
+                    placeholder="Digite o nome do produto" 
                     value={product} 
                     type="text"
                     onChange={({target}) => setProduct(target.value)}
                 />
                 <Input 
-                    placeholder="Nome do cliente" 
+                    placeholder="Digite o nome do cliente" 
                     value={client} 
                     type="text"
                     onChange={({target}) => setClient(target.value)}
                 />
                 <Input 
-                    placeholder="Ativo?" 
+                    placeholder="Digite se o produto esta ativo" 
                     value={active} 
                     type="text"
                     onChange={({target}) => setActive(target.value)}
@@ -66,6 +73,12 @@ export default function CreateItems() {
                     onClick={() => handleAddItems()}
                 >
                     Salvar
+                </Button>
+                <Button second
+                    type="button"
+                    onClick={() => handleHome()}
+                >   
+                    Voltar
                 </Button>
             </Div>
         </Div>

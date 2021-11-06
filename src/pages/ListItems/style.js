@@ -1,43 +1,43 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Div = styled.div`
   margin: auto;
   width: 60vw;
   height: 100vh; 
   border: 1px solid #d1d1e9;
-  background-color: #e3f6f5;  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${props => props.second && css`
+    width: 98%;
+    height: 90%;
+    border: none;
+  `}
 `;
   
 export const Table = styled.table`
-  width: 100%;
-  height: 85%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-collapse: collapse;  
+  border: 2px solid #d1d1e9;  
 `;
 
-export const Tr = styled.tr`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+export const Tr = styled.tr` 
+  text-align: center;
+  padding: 2px;   
 `;
 
 export const Th = styled.th`
-    width: 300px;
-    font-size: 20px;
-    padding-left: 60px;
-    border: 1px solid black;
+  font-size: 20px;
+  border: 2px solid #d1d1e9;
+  padding: 10px;
+  color: rgb(32, 32, 32);
 `;
-
+    
 export const Td = styled.td`
-    font-size: 20px;
-    padding-left: 60px;
-    border: 1px solid black;
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid #d1d1e9;
+  text-align: center;
+  color: rgb(32, 32, 32);
 `;

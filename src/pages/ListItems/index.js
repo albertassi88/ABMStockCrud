@@ -18,26 +18,38 @@ export default function ListItems() {
     return (
         <Div>
             <HeaderABM />
-            <Table>
-                <Tr>
-                    <Th>_Id</Th>
-                    <Th>Quantity</Th>
-                    <Th>Product Name</Th>
-                    <Th>Price</Th>
-                    <Th>Client</Th>
-                    <Th>Active</Th>
-                </Tr>
-                {items.map((item, index) => (
+            <Div second>
+                <Table>
                     <Tr>
-                        <Td>{item._id}</Td>
-                        <Td>{item.quantity}</Td>
-                        <Td>{item.product.productName}</Td>
-                        <Td>{item.price}</Td>
-                        <Td>{item.client.clientName}</Td>
-                        <Td>{item.active}</Td>
+                        <Th>_Id</Th>
+                        <Th>Quantity</Th>
+                        <Th>Product Name</Th>
+                        <Th>Price</Th>
+                        <Th>Client</Th>
+                        <Th>Active</Th>
                     </Tr>
-                ))}
-            </Table>
+                    {items.map((item, index) => (
+                        <Tr key={index}>
+                            <Td>{item._id}</Td>
+                            <Td>{item.quantity}</Td>
+                            <Td>{item.product.productName}</Td>
+                            <Td>{item.price}</Td>
+                            <Td>{item.client.clientName}</Td>
+                            <Td>{item.active}</Td>
+                            <button
+                                type="button"
+                            >
+                                Select
+                            </button>
+                            <button
+                                type="button"
+                            >
+                                Delete
+                            </button>
+                        </Tr>
+                    ))}
+                </Table>
+            </Div>    
         </Div>
     );
 }
