@@ -41,3 +41,28 @@ export const Td = styled.td`
   text-align: center;
   color: rgb(32, 32, 32);
 `;
+
+export const Button = styled.button`
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: #4a4d4d;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  :hover {
+		background-color: #6a6d6d;
+		cursor: pointer;
+	}
+
+  ${props => props.second && css`
+  background-color: #b12d28; 
+  :hover {
+    background-color: #c4504c;
+    cursor: pointer;
+  }    
+`}
+`;

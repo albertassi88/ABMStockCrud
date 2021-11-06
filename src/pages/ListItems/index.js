@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Div, Table, Tr, Th, Td } from "../../pages/ListItems/style";
+import { Div, Table, Tr, Th, Td, Button } from "../../pages/ListItems/style";
 import HeaderABM from "../../components/HeaderABM";
+import { useNavigate } from "react-router-dom";
 import * as api from "../../services/ApiCrudCrud";
 
 export default function ListItems() {
     const [items, setItems] = useState([]);
+    let navigate = useNavigate();
+
+    function handleSelect() {
+        navigate("/details-items");
+    }
 
     useEffect(() => {
         api.getApiCrud()
@@ -36,16 +42,17 @@ export default function ListItems() {
                             <Td>{item.price}</Td>
                             <Td>{item.client.clientName}</Td>
                             <Td>{item.active}</Td>
-                            <button
+                            <Button
                                 type="button"
+                                onClick={() => handleSelect()}
                             >
                                 Select
-                            </button>
-                            <button
+                            </Button>
+                            <Button second
                                 type="button"
                             >
                                 Delete
-                            </button>
+                            </Button>
                         </Tr>
                     ))}
                 </Table>
