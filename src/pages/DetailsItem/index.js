@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import * as api from "../../services/ApiCrudCrud";
 import { Div, Table, Tr, Th, Td, Button } from "../../pages/ListItems/style";
 import HeaderABM from "../../components/HeaderABM";
+import InputABM from "../../components/InputABM";
 import TodoContext from '../../context/TodoContext';
 
 export default function DetailsItem() {
@@ -42,6 +43,7 @@ export default function DetailsItem() {
                     )}                 
                 </Table>
             </Div>
+            <InputABM urlItems="list-items" apiService={api.PutApiCrud}/>
         </Div>
     );
 }

@@ -47,3 +47,25 @@ export const deleteApiCrud = async (id) => {
       : Promise.reject(new Error('Api error'))
   ));
 }
+
+export const PutApiCrud = async (quantityItem, priceItem, productItem, clientName, activeItem, id) => {
+  return fetch(`${URL}/item/${id}`, {
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    method: 'PUT',
+    body: JSON.stringify({
+      quantity: `${quantityItem}`, 
+            price: `${priceItem}`,
+            product: {
+              productName: `${productItem}`  
+            },
+            client: {
+              clientName: `${clientName}`
+            },
+            active: `${activeItem}` 
+    })
+  }).then((response) => (
+    response.ok
+      ? response.json()
+      : Promise.reject(new Error('Api error'))
+  ));
+}
