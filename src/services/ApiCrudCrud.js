@@ -1,4 +1,4 @@
-const URL = "https://crudcrud.com/api/e4237c617e4f42f29702696b91b3db3c";
+const URL = "https://crudcrud.com/api/2407461275de471b833378b5d396ea70";
 
 export const PostApiCrud = async (quantityItem, priceItem, productItem, clientName, activeItem) => {
   return fetch(`${URL}/item`, { 

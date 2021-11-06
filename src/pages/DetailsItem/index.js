@@ -43,7 +43,7 @@ export default function DetailsItem() {
           )}                 
         </Table>
       </Div>
-      <InputABM urlItems="list-items" apiService={api.PutApiCrud}/>
+      <InputABM urlItems="" apiService={api.PutApiCrud}/>
     </Div>
   );
 }
