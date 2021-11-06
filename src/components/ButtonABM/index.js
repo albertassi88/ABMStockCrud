@@ -6,7 +6,11 @@ export default function ButtonABM() {
     let navigate = useNavigate();
 
     function handleAddItems() {
-        navigate("/items");
+        navigate("/create-items");
+    }
+
+    function handleListItems() {
+        navigate("/list-items");
     }
 
     return (
@@ -19,6 +23,7 @@ export default function ButtonABM() {
             </Button>
             <Button second
                 type="button"
+                onClick={() => handleListItems()}
             >
                 Consultar
             </Button>

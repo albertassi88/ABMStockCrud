@@ -1,4 +1,4 @@
-export default async function CrudCrud(quantityItem, priceItem, productItem, clientName, activeItem) {
+export const PostApiCrud = async (quantityItem, priceItem, productItem, clientName, activeItem) => {
   return fetch("https://crudcrud.com/api/865b385775f745a488567153703d0cc8/item", { 
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'POST',
@@ -14,6 +14,14 @@ export default async function CrudCrud(quantityItem, priceItem, productItem, cli
             active: `${activeItem}` 
         }) 
     }).then((response) => (
+    response.ok
+      ? response.json()
+      : Promise.reject(new Error('Api error'))
+  ));
+}
+
+export const getApiCrud = async () => {
+  return fetch("https://crudcrud.com/api/865b385775f745a488567153703d0cc8/item").then((response) => (
     response.ok
       ? response.json()
       : Promise.reject(new Error('Api error'))

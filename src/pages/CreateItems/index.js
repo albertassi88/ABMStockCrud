@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ApiCrudCrud from "../../services/ApiCrudCrud";
+import * as api from "../../services/ApiCrudCrud";
 import HeaderABM from "../../components/HeaderABM/index";
 import { Div, Input, Button } from "./style";
 
@@ -15,7 +15,7 @@ export default function CreateItems() {
             alert("Favor preencher todos os campos!");
         }else{
             try {
-                ApiCrudCrud(quantity, price, product, client, active);
+                api.PostApiCrud(quantity, price, product, client, active);
                 setQuantity("");
                 setPrice("");
                 setProduct("");
