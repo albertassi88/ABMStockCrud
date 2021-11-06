@@ -15,6 +15,12 @@ export default function ListItems() {
         setIdItem(idItem);
     }
 
+    function handleDelete(idItem) {
+        api.deleteApiCrud(idItem);
+        alert(`${idItem} deletado com sucesso!`);
+        window.location.reload();
+    }
+
     useEffect(() => {
         api.getApiCrud()
         .then(data => {
@@ -53,6 +59,7 @@ export default function ListItems() {
                             </Button>
                             <Button second
                                 type="button"
+                                onClick={() => handleDelete(item._id)}
                             >
                                 Delete
                             </Button>

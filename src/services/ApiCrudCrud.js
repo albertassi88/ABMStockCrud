@@ -1,5 +1,7 @@
+const URL = "https://crudcrud.com/api/e4237c617e4f42f29702696b91b3db3c";
+
 export const PostApiCrud = async (quantityItem, priceItem, productItem, clientName, activeItem) => {
-  return fetch("https://crudcrud.com/api/865b385775f745a488567153703d0cc8/item", { 
+  return fetch(`${URL}/item`, { 
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'POST',
         body: JSON.stringify({ 
@@ -21,10 +23,27 @@ export const PostApiCrud = async (quantityItem, priceItem, productItem, clientNa
 }
 
 export const getApiCrud = async () => {
-  return fetch("https://crudcrud.com/api/865b385775f745a488567153703d0cc8/item").then((response) => (
+  return fetch(`${URL}/item`).then((response) => (
     response.ok
       ? response.json()
       : Promise.reject(new Error('Api error'))
   ));
 }
 
+export const getIdApiCrud = async (id) => {
+  return fetch(`${URL}/item/${id}`).then((response) => (
+    response.ok
+      ? response.json()
+      : Promise.reject(new Error('Api error'))
+  ));
+}
+
+export const deleteApiCrud = async (id) => {
+  return fetch(`${URL}/item/${id}`, {
+    method: 'DELETE'
+  }).then((response) => (
+    response.ok
+      ? response.json()
+      : Promise.reject(new Error('Api error'))
+  ));
+}
