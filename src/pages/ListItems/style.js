@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Div = styled.div`
   margin: auto;
@@ -60,9 +60,9 @@ export const Button = styled.button`
 
   ${props => props.second && css`
   background-color: #b12d28; 
-  :hover {
-    background-color: #c4504c;
-    cursor: pointer;
-  }    
-`}
+    :hover {
+      background-color: #c4504c;
+      cursor: pointer;
+    }    
+` }
 `;

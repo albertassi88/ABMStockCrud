@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import TodoContext from './TodoContext';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import TodoContext from "./TodoContext";
 
 function TodoProvider({ children }) {
   const [idItem, setIdItem] = useState("");
@@ -17,5 +18,12 @@ function TodoProvider({ children }) {
     </div>
   );
 }
+
+TodoProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
 
 export default TodoProvider;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Div = styled.div`
     margin: auto;
@@ -14,7 +14,7 @@ export const Div = styled.div`
         justify-content: center;
         align-items: center;
         border: none;
-  `}
+   `}
 `;
 
 export const Input = styled.input`    
@@ -51,5 +51,5 @@ export const Button = styled.button`
             background-color: #dde6ee;
             cursor: pointer;
         }   
-`}
+    `}
 `;

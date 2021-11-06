@@ -4,10 +4,10 @@ import HeaderABM from "../../components/HeaderABM";
 import ButtonABM from "../../components/ButtonABM";
 
 export default function Home() {
-    return (
-        <Div>
-            <HeaderABM />
-            <ButtonABM />
-        </Div>
-    );
+  return (
+    <Div>
+      <HeaderABM />
+      <ButtonABM />
+    </Div>
+  );
 }

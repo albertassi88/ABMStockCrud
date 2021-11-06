@@ -3,30 +3,30 @@ import { Div, Button } from "./style";
 import { useNavigate } from "react-router-dom";
 
 export default function ButtonABM() {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
-    function handleAddItems() {
-        navigate("/create-items");
-    }
+  function handleAddItems() {
+    navigate("/create-items");
+  }
 
-    function handleListItems() {
-        navigate("/list-items");
-    }
+  function handleListItems() {
+    navigate("/list-items");
+  }
 
-    return (
-        <Div>
-            <Button
-                type="button"
-                onClick={() => handleAddItems()}
-            >
+  return (
+    <Div>
+      <Button
+        type="button"
+        onClick={() => handleAddItems()}
+      >
                 Cadastrar
-            </Button>
-            <Button second
-                type="button"
-                onClick={() => handleListItems()}
-            >
+      </Button>
+      <Button second
+        type="button"
+        onClick={() => handleListItems()}
+      >
                 Consultar
-            </Button>
-        </Div>
-    );
+      </Button>
+    </Div>
+  );
 }
