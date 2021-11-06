@@ -1,11 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useContext} from "react";
+import TodoContext from '../../context/TodoContext';
 
 
-export default function DetailsItem(props) {
-    const {name} = props;
-    console.log(name)
+export default function DetailsItem() {
+    const { idItem } = useContext(TodoContext);
+
     return (
-        <p>Details</p>
+        <div>
+            {console.log(idItem)}
+
+        </div>
     );
 }

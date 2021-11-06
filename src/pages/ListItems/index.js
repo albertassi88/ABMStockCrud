@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Div, Table, Tr, Th, Td, Button } from "../../pages/ListItems/style";
 import HeaderABM from "../../components/HeaderABM";
 import { useNavigate } from "react-router-dom";
+import TodoContext from '../../context/TodoContext';
 import * as api from "../../services/ApiCrudCrud";
 
 export default function ListItems() {
     const [items, setItems] = useState([]);
+    const { setIdItem } = useContext(TodoContext);
     let navigate = useNavigate();
 
-    function handleSelect() {
+    function handleSelect(idItem) {
         navigate("/details-items");
+        setIdItem(idItem);
     }
 
     useEffect(() => {
@@ -44,7 +47,7 @@ export default function ListItems() {
                             <Td>{item.active}</Td>
                             <Button
                                 type="button"
-                                onClick={() => handleSelect()}
+                                onClick={() => handleSelect(item._id)}
                             >
                                 Select
                             </Button>
